@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Editar Usuário: {{ user.name }}{% endblock %}
+
+{% load crispy_forms_tags %} 
+
+{% block content %}
+<div class="container">
+    <h1>Editar Usuário</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-6">
+                {{ form.name|as_crispy_field }}
+            </div>
+            <div class="col-6">
+                {{ form.born_date|as_crispy_field }}
+            </div>
+        </div>
+        {{ form.test_type|as_crispy_field }}
+        <button type="submit" class="btn btn-success">Atualizar</button>
+    </form>
+</div>
+{% endblock %}

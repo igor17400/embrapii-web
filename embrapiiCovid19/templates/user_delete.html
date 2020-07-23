@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Deletar User: {{user.name}}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Deletar {{user.name}}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="alert alert-danger" role="alert">
+            Tem certeza que deseja deletar esse item?
+        </div>
+
+        <button type="submit" class="btn btn-danger">Sim</button>
+        <a href="{% url 'home' %}" >Não, voltar para home</a>
+    </form>
+</div>
+
+{% endblock %}

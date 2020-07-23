@@ -1,0 +1,13 @@
+{% extends 'base.html' %} 
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">{{ user.name }}</h1>
+        <h4>Data de nascimento: {{user.born_date}}</h4>
+        <hr class="my-4">
+        <h4>Testes realizados</h4>
+        <p>{{ user.test_type }}</p>
+
+        <a href="{% url 'user_edit' user.id %}" class="btn btn-info">Editar</a>
+        <a href="{% url 'user_delete' user.id %}" class="btn btn-danger   ">Excluir</a>
+    </div>
+{% endblock content %}
